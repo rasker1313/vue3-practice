@@ -2,25 +2,25 @@
   <div class="up-vote">
     <h2 class="title has-text-centered dividing-header">UpVote!</h2>
     <div class="section">
-      <article class="media">
+      <article v-for="(sub, key) in submissions" :key="key" class="media">
         <figure class="media-left">
           <img class="image is-64x64"
-               src="img/image-yellow.png">
+               :src="sub.submissionImage">
         </figure>
         <div class="media-content">
           <div class="content">
             <p>
               <strong>
-                <a href="#" class="has-text-info">Yellow Pail</a>
-                <span class="tag is-small">#4</span>
+                <a :href="sub.url" class="has-text-info">{{ sub.title }}</a>
+                <span class="tag is-small">#{{ sub.id }}</span>
               </strong>
               <br>
-              On-demand sand castle construction expertise.
+              {{ sub.description }}
               <br>
               <small class="is-size-7">
                 Submitted by:
                 <img class="image is-24x24"
-                     src="img/avatars/daniel.jpg">
+                     :src="sub.avatar">
               </small>
             </p>
           </div>
@@ -28,7 +28,7 @@
         <div class="media-right">
           <span class="icon is-small">
           <font-awesome-icon :icon="['fas', 'chevron-up']" />
-          <strong class="has-text-info">10</strong>
+          <strong class="has-text-info">{{ sub.votes }}</strong>
           </span>
         </div>
       </article>
@@ -37,8 +37,15 @@
 </template>
 
 <script>
+import submissions from '../../data/submissions'
+
 export default {
   name: 'UpVote',
+  data() {
+    return {
+      submissions: submissions
+    }
+  }
 }
 </script>
 
@@ -46,7 +53,7 @@ export default {
 <style scoped>
 .media {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border: 1px solid #e6e7e9;
   padding: 1em 1.5em 0.5em 1.5em;
   border-radius: 0.3em;
