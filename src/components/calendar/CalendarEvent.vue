@@ -3,8 +3,8 @@
     <div>
       <span class="has-text-centered details">{{ event.details }}</span>
       <div class="has-text-centered icons">
-        <i class="fa fa-pencil-square edit-icon"></i>
-        <i class="fa fa-trash-o delete-icon"></i>
+        <font-awesome-icon :icon="['fas', 'fa-pencil-square']" class="edit-icon" />
+        <font-awesome-icon :icon="['fas', 'fa-trash']" class="delete-icon"/>
       </div>
     </div>
   </div>
@@ -37,10 +37,9 @@ export default {
     display: block;
   }
 
-  .icons .fa {
+  .icons .svg-inline--fa {
     padding: 0 2px;
   }
-
   input {
     background: none;
     border: 0;
