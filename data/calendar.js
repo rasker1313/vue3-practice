@@ -1,4 +1,4 @@
-export const seedData = [
+export default [
     {
         id: 1,
         abbvTitle: 'Mon',

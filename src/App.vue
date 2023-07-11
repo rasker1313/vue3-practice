@@ -1,5 +1,7 @@
 <template>
-  <CalendarContainer />
+  <div id="app">
+    <CalendarContainer />
+  </div>
 <!--  <UpVote/>-->
 </template>
 
