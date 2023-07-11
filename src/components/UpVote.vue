@@ -2,7 +2,12 @@
   <div class="up-vote">
     <h2 class="title has-text-centered dividing-header">UpVote!</h2>
     <div class="section">
-      <article v-for="(sub, key) in sortedSubmissions" :key="key" class="media">
+      <article
+          v-for="(sub, key) in sortedSubmissions"
+          :key="key"
+          class="media"
+          :class="{'blue-border': sub.votes >= 20}"
+      >
         <figure class="media-left">
           <img class="image is-64x64"
                :src="sub.submissionImage">
@@ -70,6 +75,9 @@ export default {
   border: 1px solid #e6e7e9;
   padding: 1em 1.5em 0.5em 1.5em;
   border-radius: 0.3em;
+}
+.media.blue-border{
+  border-color: deepskyblue;
 }
 .image.is-24x24 {
   display: inline;
