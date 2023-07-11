@@ -2,7 +2,7 @@
   <div class="up-vote">
     <h2 class="title has-text-centered dividing-header">UpVote!</h2>
     <div class="section">
-      <article v-for="(sub, key) in submissions" :key="key" class="media">
+      <article v-for="(sub, key) in sortedSubmissions" :key="key" class="media">
         <figure class="media-left">
           <img class="image is-64x64"
                :src="sub.submissionImage">
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="media-right">
-          <span class="icon is-small">
+          <span class="icon is-small" @click="upvote(sub.id - 1)">
           <font-awesome-icon :icon="['fas', 'chevron-up']" />
           <strong class="has-text-info">{{ sub.votes }}</strong>
           </span>
@@ -45,7 +45,20 @@ export default {
     return {
       submissions: submissions
     }
-  }
+  },
+  methods: {
+    upvote(id){
+      this.submissions[id].votes++
+    }
+  },
+  computed: {
+    sortedSubmissions() {
+      const sorted = [...this.submissions]
+      return sorted.sort((a, b) => {
+        return b.votes - a.votes;
+      });
+    },
+  },
 }
 </script>
 
