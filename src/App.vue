@@ -1,20 +1,23 @@
 <template>
-  <UpVote/>
+  <CalendarContainer />
+<!--  <UpVote/>-->
 </template>
 
 <script>
-import UpVote from './components/UpVote.vue'
+//import UpVote from './components/UpVote.vue'
+import CalendarContainer from './components/calendar/CalendarContainer'
 
 export default {
   name: 'App',
   components: {
-    UpVote
+    //UpVote,
+    CalendarContainer
   }
 }
 </script>
 
 <style>
-#app{
-  margin:30px 0;
+html, body, #app{
+  height:100%
 }
 </style>
