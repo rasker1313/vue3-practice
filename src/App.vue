@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <CalendarContainer />
+    <TopMenu />
+    <router-view></router-view>
   </div>
 <!--  <UpVote/>-->
 </template>
 
 <script>
-//import UpVote from './components/UpVote.vue'
-import CalendarContainer from './components/calendar/CalendarContainer'
+import TopMenu from './components/TopMenu.vue'
 
 export default {
   name: 'App',
   components: {
-    //UpVote,
-    CalendarContainer
+    TopMenu,
   }
 }
 </script>
