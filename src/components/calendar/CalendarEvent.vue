@@ -6,7 +6,9 @@
         <font-awesome-icon :icon="['fas', 'fa-pencil-square']" class="edit-icon"
                            @click="editEvent(day.id, event.details)"
         />
-        <font-awesome-icon :icon="['fas', 'fa-trash']" class="delete-icon"/>
+        <font-awesome-icon :icon="['fas', 'fa-trash']" class="delete-icon"
+                           @click="deleteEvent(day.id, event.details)"
+        />
       </div>
     </div>
     <div v-if="event.edit">
@@ -39,6 +41,9 @@ export default {
       if (updatedEventDetails === '') updatedEventDetails = originalEventDetails;
       store.updateEvent(dayId, originalEventDetails, updatedEventDetails);
       this.newEventDetails = '';
+    },
+    deleteEvent(dayId, eventDetails){
+      store.deleteEvent(dayId, eventDetails)
     }
   },
   computed:{

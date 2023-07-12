@@ -41,5 +41,14 @@ export const store = {
         return dayObj.events.find(
             (event) => event.details === eventDetails
         );
+    },
+    deleteEvent(dayId, eventDetails){
+        const dayObj = this.state.data.find(
+            day => day.id === dayId
+        )
+        const eventIndexToRemote = dayObj.events.findIndex(
+            event => event.details === eventDetails
+        )
+        dayObj.events.splice(eventIndexToRemote, 1)
     }
 }
