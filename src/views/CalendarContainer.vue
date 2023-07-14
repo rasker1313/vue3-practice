@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import CalendarWeek from './CalendarWeek'
-import CalendarEntry from './CalendarEntry'
+import CalendarWeek from '../components/calendar/CalendarWeek'
+import CalendarEntry from '../components/calendar/CalendarEntry'
 export default {
   name: "CalendarContainer",
   components:{

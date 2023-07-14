@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
     <TopMenu />
     <router-view></router-view>
-  </div>
 <!--  <UpVote/>-->
 </template>
 

@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/upvote">Upvote</router-link>
       <router-link to="/calendar">Calendar</router-link>
+      <router-link to="/note-list">Note List</router-link>
     </div>
   </div>
 </template>
