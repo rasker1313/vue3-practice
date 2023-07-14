@@ -10,5 +10,6 @@ library.add(faChevronUp, faPencilSquare, faTrash, faCheck);
 
 createApp(App)
     .component("font-awesome-icon", FontAwesomeIcon)
-    .use(router, noteStore)
+    .use(noteStore)
+    .use(router)
     .mount('#app')
